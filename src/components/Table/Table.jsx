@@ -1,33 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { CharacterBox, CharacterItem, CharacterName } from './Table.styled';
 
 function Table({ items, loading }) {
   return loading ? (
     <h1>Carregando...</h1>
   ) : (
-    <section>
+    <CharacterBox>
       {items.map((item) => (
-        <div key={item.id}>
-          <div>
-            <Link to={`/personagem/${item.id}`}>
-              <img
-                src={`${item.thumbnail.path}/standard_fantastic.jpg`}
-                alt={item.name}
-              />
-            </Link>
-          </div>
+        <CharacterItem key={item.id}>
+          <Link to={`/personagem/${item.id}`}>
+            <img
+              src={`${item.thumbnail.path}/standard_fantastic.jpg`}
+              alt={item.name}
+            />
+          </Link>
 
-          <div>
-            <div>
-              <Link to={`/personagem/${item.id}`}>
-                <h2>{item.name}</h2>
-              </Link>
-            </div>
-          </div>
-        </div>
+          <CharacterName>
+            <Link to={`/personagem/${item.id}`}>
+              <h2>{item.name}</h2>
+            </Link>
+          </CharacterName>
+        </CharacterItem>
       ))}
-    </section>
+    </CharacterBox>
   );
 }
 
