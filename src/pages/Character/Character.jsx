@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Personagem() {
+function Character() {
   return (
     <div>
       <h1>Página Persnagem</h1>
@@ -8,4 +8,4 @@ function Personagem() {
   );
 }
 
-export default Personagem;
+export default Character;

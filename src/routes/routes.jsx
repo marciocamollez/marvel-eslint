@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Inicial from '../pages/Inicial/Inicial';
-import Personagem from '../pages/Personagem/Personagem';
+import Index from '../pages/Index/Index';
+import Character from '../pages/Character/Character';
 
 export const AppRoutes = () => (
   <Routes>
-    <Route exact path="/" element={<Inicial />} />
-    <Route path="/personagem/:id" element={<Personagem />} />
+    <Route exact path="/" element={<Index />} />
+    <Route path="/personagem/:id" element={<Character />} />
     <Route path="*" element={<Navigate to="/" />} />
   </Routes>
 );
