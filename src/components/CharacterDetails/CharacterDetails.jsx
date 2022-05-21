@@ -1,47 +1,60 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CharacterName } from './CharacterDetails.styled';
+import {
+  CharacterName,
+  CharacterInfo,
+  CharacterImage,
+  CharacterNumbers,
+  CharacterRecord,
+} from './CharacterDetails.styled';
 
 function CharacterDetails({ items, comics }) {
   return (
     <section>
-      <CharacterName>
-        {items.map((item) => (
-          <div key={item.id}>
+      {items.map((item) => (
+        <CharacterName key={item.id}>
+          <CharacterInfo>
             <h1>{item.name}</h1>
             <p>{item.description}</p>
 
-            <p>
-              <strong>
-                Quadrinhos:
-                <br />
-              </strong>
-              <img src="/ic_quadrinhos.svg" alt="Quadrinhos" />{' '}
-              <span>{item.comics.available}</span>
-            </p>
+            <CharacterNumbers>
+              <div>
+                <p>
+                  <strong>
+                    Quadrinhos:
+                    <br />
+                  </strong>
+                  <img src="/ic_quadrinhos.svg" alt="Quadrinhos" />{' '}
+                  <span>{item.comics.available}</span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  <strong>
+                    Filmes:
+                    <br />
+                  </strong>
+                  <img src="/ic_trailer.svg" alt="Filmes" />{' '}
+                  <span>{item.series.available}</span>
+                </p>
+              </div>
+            </CharacterNumbers>
+          </CharacterInfo>
 
-            <p>
-              <strong>
-                Filmes:
-                <br />
-              </strong>
-              <img src="/ic_trailer.svg" alt="Filmes" />{' '}
-              <span>{item.series.available}</span>
-            </p>
-
+          <CharacterImage>
             <img src={`${item.thumbnail.path}/detail.jpg`} alt={item.name} />
-          </div>
-        ))}
-      </CharacterName>
+          </CharacterImage>
+        </CharacterName>
+      ))}
 
-      <section>
+      <CharacterRecord>
         <h2>Todas as aparições:</h2>
         {comics.map((item) => (
           <div key={item.name}>
             <p>{item.name}</p>
           </div>
         ))}
-      </section>
+      </CharacterRecord>
     </section>
   );
 }
