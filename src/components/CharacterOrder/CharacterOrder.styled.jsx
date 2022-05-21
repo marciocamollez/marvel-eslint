@@ -27,21 +27,21 @@ export const OrdenationCheck = styled.span`
 export const OrdenationInput = styled.input`
   display: none;
 
-  label {
+  & + label {
     cursor: pointer;
     display: inline-block;
     padding: 0;
     width: 75px;
     height: 41px;
-    background-image: url(/public/toggle_off.svg);
+    background-image: url(/toggle_off.svg);
   }
 
-  :checked + label {
+  &:checked + label {
     cursor: pointer;
     display: inline-block;
     padding: 0;
     width: 75px;
     height: 41px;
-    background-image: url(/public/toggle_on.svg);
+    background-image: url(/toggle_on.svg);
   }
 `;
