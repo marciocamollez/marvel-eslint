@@ -18,6 +18,11 @@ export const SearchForm = styled.form`
     margin-right: 30px;
     margin-left: 30px;
     width: 30px;
+
+    @media (max-width: 350px) {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
   }
 `;
 
@@ -32,6 +37,11 @@ export const SearchInput = styled.input`
 
   @media (max-width: 767px) {
     width: 200px;
+    max-width: 200px;
+  }
+
+  @media (max-width: 350px) {
+    width: 150px;
     max-width: 200px;
   }
 `;

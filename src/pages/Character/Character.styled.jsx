@@ -20,7 +20,8 @@ export const CharacterHeader = styled.header`
     flex-direction: column;
 
     div {
-      margin-bottom: 50px;
+      margin-top: 50px;
+      margin-right: 0px;
     }
   }
 `;

@@ -10,10 +10,16 @@ export const CharacterName = styled.section`
 
   @media (max-width: 767px) {
     flex-direction: column;
+    padding-top: 0px;
   }
 `;
 export const CharacterInfo = styled.div`
   flex: 2;
+  margin-right: 50px;
+
+  @media (max-width: 767px) {
+    margin-right: 0px;
+  }
 
   h1 {
     font-size: 3rem;
@@ -21,6 +27,11 @@ export const CharacterInfo = styled.div`
 `;
 export const CharacterImage = styled.div`
   flex: 1;
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
 `;
 
 export const CharacterNumbers = styled.div`
@@ -40,7 +51,7 @@ export const CharacterNumbers = styled.div`
   }
 
   @media (max-width: 767px) {
-    flex-direction: column;
+    justify-content: space-around;
 
     div {
       margin-right: 0px;

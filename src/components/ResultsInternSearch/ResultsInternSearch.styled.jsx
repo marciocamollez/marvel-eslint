@@ -32,4 +32,13 @@ export const NamesInternSearch = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.red};
+  }
+
+  a:hover {
+    color: #000;
+  }
 `;

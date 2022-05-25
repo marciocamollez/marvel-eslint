@@ -12,6 +12,10 @@ export const Widget = styled.div`
   padding-left: 25px;
   padding-right: 25px;
   margin-bottom: 25px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 export const ButtonOrder = styled.button`
   width: 75px;
