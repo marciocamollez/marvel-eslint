@@ -7,13 +7,13 @@
   padding: 12px;
   width: 18px;
   height: 18px;
-  background-image: url(/public/favorito_02.svg);
+  background-image: url(/favorito_02.svg);
   background-repeat: no-repeat;
 }
 .liked{
   padding: 12px;
   width: 18px;
   height: 18px;
-  background-image: url(/public/favorito_01.svg);
+  background-image: url(/favorito_01.svg);
   background-repeat: no-repeat;
 }

@@ -22,7 +22,11 @@ export const CharacterInfo = styled.div`
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
   }
 `;
 export const CharacterImage = styled.div`
@@ -33,7 +37,10 @@ export const CharacterImage = styled.div`
     display: block;
   }
 `;
-
+export const CharacterLikes = styled.div`
+  display: flex;
+  align-items: center;
+`;
 export const CharacterNumbers = styled.div`
   display: flex;
   align-items: center;

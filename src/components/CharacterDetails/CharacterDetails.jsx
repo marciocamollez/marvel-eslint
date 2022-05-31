@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LikeButton from '../LikeButton/LikeButton';
 import {
   CharacterName,
   CharacterInfo,
   CharacterImage,
   CharacterNumbers,
   CharacterRecord,
+  CharacterLikes,
 } from './CharacterDetails.styled';
 
 function CharacterDetails({ items, comics }) {
@@ -14,7 +16,11 @@ function CharacterDetails({ items, comics }) {
       {items.map((item) => (
         <CharacterName key={item.id}>
           <CharacterInfo>
-            <h1>{item.name}</h1>
+            <CharacterLikes>
+              <LikeButton item={item} />
+              <h1>{item.name}</h1>
+            </CharacterLikes>
+
             <p>{item.description}</p>
 
             <CharacterNumbers>
