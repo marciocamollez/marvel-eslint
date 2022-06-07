@@ -15,6 +15,15 @@ export const OrdernationBox = styled.section`
   }
 `;
 
+/* Need to type default value for styled component because testing library exam styled files too */
+OrdernationBox.defaultProps = {
+  theme: {
+    colors: {
+      red: '#d70000',
+    },
+  },
+};
+
 export const OrdenationCheck = styled.span`
   display: flex;
   align-items: center;

@@ -45,3 +45,11 @@ export const SearchInput = styled.input`
     max-width: 200px;
   }
 `;
+/* Need to type default value for styled component because testing library exam styled files too */
+SearchInput.defaultProps = {
+  theme: {
+    colors: {
+      red: '#d70000',
+    },
+  },
+};

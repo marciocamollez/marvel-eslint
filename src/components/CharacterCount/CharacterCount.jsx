@@ -5,14 +5,23 @@ import { Count } from './CharacterCount.styled';
 function CharacterCount({ count, loading }) {
   return (
     <Count>
-      {loading ? <p>Calculando...</p> : <p>Encontrados {count} heróis</p>}
+      {loading ? (
+        <p>Calculando...</p>
+      ) : (
+        <p data-testid="countheros">Encontrados {count} heróis</p>
+      )}
     </Count>
   );
 }
 
+CharacterCount.defaultProps = {
+  count: 0,
+  loading: false,
+};
+
 CharacterCount.propTypes = {
-  count: PropTypes.number.isRequired,
-  loading: PropTypes.bool.isRequired,
+  count: PropTypes.number,
+  loading: PropTypes.bool,
 };
 
 export default CharacterCount;
