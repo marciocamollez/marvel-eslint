@@ -19,7 +19,7 @@ export const CharacterItem = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   padding-left: 25px;
   padding-right: 25px;
   box-sizing: border-box;
@@ -37,6 +37,8 @@ export const CharacterItem = styled.div`
     font-size: 1rem;
     color: #404040;
     display: inline-block;
+    margin: 0px;
+    padding: 0px;
   }
 
   @media (max-width: 767px) {
@@ -47,6 +49,7 @@ export const CharacterItem = styled.div`
 export const CharacterName = styled.div`
   display: flex;
   justify-content: space-around;
+  min-height: 70px;
   width: 100%;
   align-items: center;
 `;
