@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
-import { Context } from '../../Context/AuthContext';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Count } from './CharacterCount.styled';
 
-function CharacterCount() {
-  const { count, loading } = useContext(Context);
-
+function CharacterCount({ count, loading }) {
   return (
     <Count>
       {loading ? (
@@ -15,5 +13,15 @@ function CharacterCount() {
     </Count>
   );
 }
+
+CharacterCount.defaultProps = {
+  count: 0,
+  loading: false,
+};
+
+CharacterCount.propTypes = {
+  count: PropTypes.number,
+  loading: PropTypes.bool,
+};
 
 export default CharacterCount;

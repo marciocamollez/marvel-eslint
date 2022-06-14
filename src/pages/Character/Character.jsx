@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { StyledBgColor, CharacterHeader } from './Character.styled';
 import { Container } from '../../components/styles/Container.styled';
 import CharacterDetails from '../../components/CharacterDetails/CharacterDetails';
-import SearchIndex from '../../components/SearchIndex/SearchIndex';
 import ResultsInternSearch from '../../components/ResultsInternSearch/ResultsInternSearch';
+import SearchCharacterPage from '../../components/SearchCharacterPage/SearchCharacterPage';
 
 function Character() {
   // hash = timestamp (1) + private key + public key convertido em md5
-  // const hash = '21beb75ca82b20e52c8910f3e6599d79';
-  // const apikey = 'eb8c78fd1e6e98315a9d42fff3b5c040';
+  const hash = '21beb75ca82b20e52c8910f3e6599d79';
+  const apikey = 'eb8c78fd1e6e98315a9d42fff3b5c040';
 
   // Hash da segunda conta criada. Deixar como backup
   // const hash = 'e8a129eee49b78fd4436bf9bb8102b3d';
   // const apikey = '0b9047fa3f3f24bdf3933db0deb25d35';
 
   // Hash da terceira conta criada. Deixar como backup
-  const hash = '0831fa35f29375d318907526a23a684d';
-  const apikey = '57463f7ef04fc32098ca081d675c8d9e';
+  // const hash = '0831fa35f29375d318907526a23a684d';
+  // const apikey = '57463f7ef04fc32098ca081d675c8d9e';
 
   const [items, setItems] = useState([]);
   const [comics, setComics] = useState([]);
@@ -60,9 +60,11 @@ function Character() {
       <Container>
         <CharacterHeader>
           <div>
-            <img src="/logo_menor.svg" alt="Marvel" title="Marvel" />
+            <Link to="/">
+              <img src="/logo_menor.svg" alt="Marvel" title="Marvel" />
+            </Link>
           </div>
-          <SearchIndex search={(q) => setQuery(q)} />
+          <SearchCharacterPage search={(q) => setQuery(q)} />
         </CharacterHeader>
         <ResultsInternSearch resultsInternSearch={resultsInternSearch} />
 

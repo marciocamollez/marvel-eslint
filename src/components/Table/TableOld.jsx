@@ -1,12 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Context } from '../../Context/AuthContext';
+import PropTypes from 'prop-types';
 import { CharacterBox, CharacterItem, CharacterName } from './Table.styled';
 import LikeButton from '../LikeButton/LikeButton';
 
-function Table() {
-  const { items, loading } = useContext(Context);
-
+function Table({ items, loading }) {
   return loading ? (
     <h1>Carregando...</h1>
   ) : (
@@ -31,5 +29,14 @@ function Table() {
     </CharacterBox>
   );
 }
+
+Table.defaultProps = {
+  items: [],
+};
+
+Table.propTypes = {
+  items: PropTypes.array,
+  loading: PropTypes.bool.isRequired,
+};
 
 export default Table;

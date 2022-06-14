@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { SearchBox, SearchForm, SearchInput } from './SearchIndex.styled';
+import { Context } from '../../Context/AuthContext';
 
-function SearchIndex({ search }) {
-  const [text, setText] = useState('');
-
-  const onSearch = (q) => {
-    setText(q);
-    search(q);
-  };
+function SearchIndex() {
+  const { handleSearch } = useContext(Context);
 
   return (
     <SearchBox>
@@ -17,20 +12,11 @@ function SearchIndex({ search }) {
         <SearchInput
           type="text"
           placeholder="Procure por heróis"
-          onChange={(e) => onSearch(e.target.value)}
-          value={text}
+          onChange={handleSearch}
         />
       </SearchForm>
     </SearchBox>
   );
 }
-
-SearchIndex.defaultProps = {
-  search: '',
-};
-
-SearchIndex.propTypes = {
-  search: PropTypes.func,
-};
 
 export default SearchIndex;
