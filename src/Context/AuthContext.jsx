@@ -31,7 +31,7 @@ function AuthProvider({ children }) {
   // Paginação
   const [limit] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState(20);
 
   // Busca
   const [query, setQuery] = useState('');
@@ -80,9 +80,10 @@ function AuthProvider({ children }) {
         `https://gateway.marvel.com/v1/public/characters?ts=1&apikey=${apikey}&hash=${hash}&offset=${offset}&limit=${limit}` +
           { currentPage }
       );
-      setItems(result.data.data.results);
+
       setCurrentPage(currentPage + 1);
       setOffset(offset + 20); // Offset de 20 em 20 personagens para trocar a página
+      setItems(result.data.data.results);
     };
     fetchNextPages();
   }
@@ -94,6 +95,7 @@ function AuthProvider({ children }) {
         `https://gateway.marvel.com/v1/public/characters?ts=1&apikey=${apikey}&hash=${hash}&offset=${offset}&limit=${limit}` +
           { currentPage }
       );
+
       setItems(result.data.data.results);
       setOffset(offset - 20); // Offset de 20 em 20 personagens para trocar a página
       setCurrentPage(currentPage - 1);
