@@ -8,6 +8,7 @@ import CharacterCount from '../../components/CharacterCount/CharacterCount';
 import CharacterOrder from '../../components/CharacterOrder/CharacterOrder';
 import Pagination from '../../components/Pagination/Pagination';
 import ButtonOrder from '../../components/ButtonOrder/ButtonOrder';
+import LikeFilter from '../../components/LikeFilter/LikeFilter';
 
 function Index() {
   return (
@@ -21,6 +22,7 @@ function Index() {
           <CharacterCount />
           <CharacterOrder />
           <ButtonOrder />
+          <LikeFilter />
         </Widget>
 
         <Table />
